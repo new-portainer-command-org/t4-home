@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-seed
+  labels: {app: home-seed}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: home-seed}}
+  template:
+    metadata: {labels: {app: home-seed}}
+    spec:
+      containers:
+        - name: home-seed
+          image: nginx:1.27-alpine
+          env: [{name: VERSION, value: "v1"}]
+          resources: {requests: {cpu: 5m, memory: 16Mi}}
