@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: t4-1793837928
+  namespace: team-a
+data:
+  k: v
